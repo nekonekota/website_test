@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/*==========================================
+サイト全体のCSS
+==========================================*/
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #f0f0f0;
+  color: #000;
+  font-size: 1.4rem;
+}
+a {
+  color: #000;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  height: auto;
+}
+li {
+  list-style: none;
+}
+/*--ロゴ--*/
+.logo {
+  width: 100px;
+  line-height: 1px;
+  margin-right: 60px;
+}
+/*==========================================
+サイト全体 header
+==========================================*/
+#header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*--header グロナビ--*/
+#header .inner {
+  display: flex;
+  align-items: center;
+}
+#header .inner ul {
+  display: flex;
+  align-items: center;
+}
+#header .inner li {
+  margin-right: 30px;
+}
+#header .inner li:last-child {
+  margin-right: 0;
+}
+.logo a {
+  display: block;
+}
+/*--header お問合せ--*/
+#header .contact {
+  width: 200px;
+  height: 80px;
+  line-height: 80px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s;
+}
+#header .contact:hover {
+  background-color: #333;
+}
+#header .sp-nav{
+  display:none;
+}
+
+/*==========================================
+サイト全体 footer
+==========================================*/
+#footer {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+#footer .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+#footer .flex .logo {
+  margin-right: 0;
+}
+#footer .copyright {
+  font-size: 1.2rem;
+}
+/*--TOPへ戻るボタン--*/
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #5f5f5f;
+  opacity: 0.6;
+  border-radius: 50%;
+  margin-right:20px;
+  margin-bottom:20px;
+  }
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f062';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+/*==========================================
+共通パーツ（ボタン、見出し、レイアウト）
+==========================================*/
+/*-----------
+レイアウト
+-----------*/
+/*--横幅を設定するための共通クラス--*/
+.wrapper {
+  width: 100%;
+  max-width: 1032px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+/*--ボックス--*/
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.flex-col2{
+  width: calc(50% - 27px);
+}
+/*--テーブル--*/
+.table_01{
+  width: 100%;
+}
+.table_01 tr{
+}
+.table_01 tr th{
+  padding: 30px 10px 20px 10px;
+  border-bottom: 3px solid #333333;
+}
+.table_01 tr td{
+  padding: 30px 10px 20px 10px;
+  border-bottom: 1px solid #333333;
+}
+/*--見出し--*/
+.section-title {
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 50px;
+}
+/*
+疑似要素を使って下線を引く
+*/
+.section-title::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #000;
+  display: block;
+}
+/*
+「display: inline-block;」を設定してブロック化することで、
+改行されてmargin-bottomが使用できるようになる
+*/
+.section-title .en {
+  display: block;
+  font-size: 3.6rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 10px;
+}
+.section-title .ja {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 36px;
+}
+/*--ボタン--*/
+.btn_white {
+  border: 1px solid #000;
+  padding: 1.5rem;
+  margin-top: 30px;
+  transition: 0.5s;
+  }
+.btn_white:hover {
+  opacity: .5;
+  background: #ffffff;
+  }
+.btn_bk {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  padding: 1.5rem;
+  margin-top: 30px;
+  transition: 0.5s;
+  }
+.btn_bk:hover {
+  background: #333333;
+  }

@@ -1,0 +1,362 @@
+@charset "UTF-8";
+/*ページごとのCSS*/
+/*==========================================
+TOP
+==========================================*/
+/*-----------
+TOP Mainvisual
+-------------*/
+#mainvisual {
+  margin-bottom: 120px;
+}
+/*
+メインビジュアルを画面の高さに合わせる
+headerの高さが80pxあるので、100vhから80px分だけマイナスする
+*/
+#mainvisual img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  object-fit: cover;
+}
+
+/*-----------
+TOP blog
+------------*/
+#blog {
+  margin-bottom: 120px;
+}
+#blog .list {
+  display: flex;
+  justify-content: space-between;
+}
+/*
+「width: calc(100%/3);」で横幅を3等分する
+*/
+#blog .list li {
+  width: calc(100%/3);
+  border-right: solid 1px #000;
+  padding: 10px 20px;
+}
+#blog .list li:first-child {
+  padding-left: 0;
+}
+#blog .list li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+#blog .list li .date-area {
+  margin-bottom: 16px;
+}
+#blog .list li .date-area span {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  text-align: center;
+}
+#blog .list li p {
+  font-size: 1.6rem;
+}
+/*-----------
+TOP About
+-----------*/
+#about {
+  display: flex;
+  margin-bottom: 120px;
+}
+#about .img {
+  width: 55%;
+}
+#about .img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+#about .text {
+  width: 45%;
+  padding: 180px 5% 0 5%;
+}
+#about .text p {
+  line-height: 2.2;
+}
+#about .show_popcontent {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+#about .show_popcontent.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about .content {
+  width:50%;
+  aspect-ratio: 16 / 9;
+}
+#about .content iframe {
+  width:100%;
+  height:100%;
+}
+
+#about #close {
+   width: 80%;
+   display: block;
+   margin: 30px auto 0 auto;
+   padding: 10px 0;
+   text-align: center;
+   color: #fff;
+   background: #000;
+   
+}
+/*-----------
+TOP Business
+------------*/
+#business {
+  margin-bottom: 120px;
+}
+#business .flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+}
+#business .flex .left {
+  width: 46%;
+  margin-top: 100px;
+}
+#business .flex .right {
+  width: 46%;
+}
+#business .flex .item {
+  margin-bottom: 50px;
+}
+#business .flex .item:last-child {
+  margin-bottom: 0;
+}
+#business .flex .title {
+  font-weight: bold;
+  margin: 0 0 10px 18px;
+  position: relative;
+}
+/*
+疑似要素でタイトルの横線を引く
+*/
+#business .flex .title::before {
+  content: "";
+  width: 8px;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: -18px;
+}
+
+/*-----------
+TOP Company
+------------*/
+/*
+テキストと画像はpositionを使って配置
+子要素の「position: absolute;」で高さがなくなるため、
+「height: 750px;」を指定して高さを確保
+*/
+#company {
+  height: 750px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#company .text {
+  width: 55%;
+  background-color: #fff;
+  padding: 100px 8% 100px 6%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#company .img {
+  width: 53%;
+  position: absolute;
+  top: 115px;
+  right: 0;
+}
+#company .img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+#company .info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#company .info dt {
+  width: 20%;
+  margin-top: 10px;
+}
+/*
+1つめのdtにはmargin-topを設定しない
+*/
+#company .info dt:first-of-type {
+  margin-top: 0;
+}
+#company .info dd {
+  width: 80%;
+  margin-top: 10px;
+}
+/*
+1つめのddにはmargin-topを設定しない
+*/
+#company .info dd:first-of-type {
+  margin-top: 0;
+}
+#company .info .add {
+  margin-left: 20%;
+}
+
+
+/*==========================================
+下層　article
+==========================================*/
+/*-----------
+article 共通
+-----------*/
+.article main .wrapper {
+  padding: 80px 16px 150px 16px;
+}
+.article main .wrapper section{
+  margin-bottom: 120px;
+}
+.article main p{
+  margin-bottom: 34px;
+  line-height: 3.2rem;
+}
+/*-----------
+article ページタイトル
+-----------*/
+.title-area{
+  position: relative;
+}
+.title-img {
+    width: 100%;
+    height: auto;
+}
+.title-txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.6rem;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 1.08rem;
+}
+.title-txt:after {
+  content: " ";
+  margin-left: -1.08rem;
+}
+
+/*-----------
+article about
+-----------*/
+.about .table_01 tr th{
+  width: 150px;
+  text-align: center;
+  font-weight: normal;
+}
+
+/*-----------
+article blog
+-----------*/
+.blog .cat-nav{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #333333
+}
+.blog .cat-nav li{
+  width: calc(100% * 4);
+  padding-bottom: 23px;
+  text-align: center;
+}
+.blog .cat-nav li.nav_current{
+  border-bottom: 3px solid #333333
+}
+.blog .cat-nav li:hover{
+  opacity: .8;
+  cursor: pointer;
+}
+.blog .cat-content{
+  display: none;
+}
+.blog .cat-content.con_current{
+  display: inline;
+}
+.blog .cat-content li a{
+  display: block;
+  padding: 50px 0;
+  border-bottom: 1px solid #CCCCCC;
+}
+.blog .cat-content li h2{
+  font-size: 1em;
+  font-weight: normal;
+}
+.blog .blog-title{
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #333333;
+  font-weight: normal;
+  font-size: 2.4rem;
+}
+.blog .data-area{
+  margin-bottom: 30px;
+}
+.blog .data-area .data{
+  margin-right: 10px;
+}
+.blog .data-area .category{
+  background: #333333;
+  padding: 4px 7px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.blog .ditil-area{
+  border-bottom: 1px solid #333333;
+}
+.blog.ditil .flex{
+  justify-content: center;
+}
+.blog.ditil .flex .btn_white:first-child{
+  margin-right: 25px;
+}
+
+/*-------------------
+article CONTCT
+-------------------*/
+
+.wpcf7-form sup{
+  color:#FF0000;
+}
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  width: 100%;
+  padding: 1rem 1.2rem;
+}
+
+.submit_box{
+  text-align: center;
+}
+
+.contact .submit_box .btn_white{
+  width: 94px;
+  height: 46px;
+
+} 
